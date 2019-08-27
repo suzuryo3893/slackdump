@@ -7,6 +7,8 @@ Replies are also dumped.
 # Requirements
 
 * Python3
+  * requests
+  * lxml
 
 # How
 
