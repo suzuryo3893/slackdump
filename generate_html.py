@@ -79,6 +79,7 @@ def main():
                 br.tail=lines[i]
 
             if "replies" in msg:
+                msg["replies_body"]["messages"]=sorted(msg["replies_body"]["messages"],key=lambda m: float(m["ts"]))
                 iul=etree.SubElement(li,"ul")
                 rep_msgs=msg["replies_body"]["messages"][1:]
                 for rmsg in rep_msgs:
