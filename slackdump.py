@@ -130,6 +130,7 @@ def main():
                     replies["messages"]+=_replies["messages"]
                 replies["has_more"]=False
                 if "response_metadata" in replies: del replies["response_metadata"]
+                replies["messages"]=[x for x in replies["messages"] if not "replies" in x]
                 msg["replies_body"]=replies
         ch["history"]=history
 
