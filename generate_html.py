@@ -81,7 +81,7 @@ def main():
             if "replies" in msg:
                 msg["replies_body"]["messages"]=sorted(msg["replies_body"]["messages"],key=lambda m: float(m["ts"]))
                 iul=etree.SubElement(li,"ul")
-                rep_msgs=msg["replies_body"]["messages"][1:]
+                rep_msgs=msg["replies_body"]["messages"]
                 for rmsg in rep_msgs:
                     ili=etree.SubElement(iul,"li")
                     dts=datetime.fromtimestamp(int(rmsg["ts"].split(".")[0])).strftime('%Y/%m/%d %H:%M:%S')
